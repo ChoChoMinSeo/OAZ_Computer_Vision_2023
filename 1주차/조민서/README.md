@@ -21,4 +21,4 @@ Optimizer: Adam
 
 Epoch: 30
 
-for more detail: model.ipynb
+for more train detail: model.ipynb
