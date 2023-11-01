@@ -9,4 +9,5 @@ loss function: CrossEntropyLoss 사용
 결과: test accuracy가 83.9%로 꽤 좋은 성능을 보입니다.
 
 
-* 전공 수업에서 배운 코드를 참조해서 작성했습니다 
+
+** 전공 수업에서 배운 코드를 참조해서 작성했습니다 
