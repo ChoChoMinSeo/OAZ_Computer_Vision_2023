@@ -1,6 +1,6 @@
 # ResNet 이용한 고양이와 개 분류
 
-학습률 : 0.1, 미니배치: 32, epoch: 100으로 설정
+학습률 : 0.1, 미니배치: 32, epoch: 100으로 설정 <br>
 회전, 아핀변환, color jitter를 통해 Data Augmentation -> train dataset 정규화
 input channels: 3, output channels: 64, kernel_size=3, stride=2, padding=3
 loss function: CrossEntropyLoss 사용
