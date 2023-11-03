@@ -5,7 +5,7 @@ import torch.optim as optim
 from tqdm import tqdm
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-# Timer Decorator
+# Timer Decorator: 함수 실행하는 데 걸리는 시간 측정
 import time
 def timer(func):
     def wrapper(*args, **kwargs):
@@ -58,6 +58,7 @@ def prepare_dogs_cats(dirname='/content/cats_and_dogs_filtered', download=False)
     number_of_val_dog = len(os.listdir(val_dogs_dir))
     train_fnames_list = [os.path.join(train_cats_dir, fname) for fname in train_cat_fnames] + [os.path.join(train_dogs_dir, fname) for fname in train_dog_fnames]
     val_fnames_list = [os.path.join(val_cats_dir, fname) for fname in val_cat_fnames] + [os.path.join(val_dogs_dir, fname) for fname in val_dog_fnames]
+    #Labeling 0: cat, 1: dog
     train_label_list = list(chain.from_iterable((repeat(label, num) for (label, num) in zip([0, 1], [number_of_train_cat, number_of_train_dog]))))
     val_label_list = list(chain.from_iterable((repeat(label, num) for (label, num) in zip([0, 1], [number_of_val_cat, number_of_val_dog]))))
 
@@ -73,11 +74,10 @@ import PIL.Image as Image
 # Data Augmentation with Rotation, Affine transform, Jittering
 train_transform = transforms.Compose(
                     [
-                    transforms.ColorJitter(brightness=0.05, contrast=0.05, saturation=0.05, hue=0.05),
+                    transforms.ColorJitter(brightness=0.05, contrast=0.05, saturation=0.05, hue=0.05), #밝기, 대비, 채도, 색상 조정
                     transforms.RandomRotation(20),
                     transforms.RandomAffine(degrees=20, translate=(0.1,0.1), scale=(0.9, 1.1)),
                     transforms.Resize((128, 128)),
-                    # transforms.AutoAugment(policy=transforms.autoaugment.AutoAugmentPolicy.IMAGENET, interpolation=transforms.InterpolationMode.BILINEAR),
                     transforms.ToTensor(),
                     ])
 
