@@ -19,7 +19,7 @@ Long sleeve top, trouser 등 deep fashion2 dataset의 13가지 옷 종류 detect
 
 (학습시킨 weight를 용량문제로 업로드 할 수 없어 다운 받으셔도 실행 할 수 없습니다..!)
 
-![Alt text](./assets/res.jpg)
+![Alt text](./assets/res.png)
 
 ## 실행방법(weight가 있다는 가정하에):
 1. inference 폴더 전체를 다운 받습니다.
